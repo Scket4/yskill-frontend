@@ -1,0 +1,34 @@
+$backgroundColor: #8FBDE8;
+$actionColor: #4461F2;
+
+
+.ant-dropdown-menu-item {
+  button {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+}
+
+.underline-text {
+  position: relative;
+   &:after {
+     position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: $actionColor;
+     bottom: -2px;
+     left: 0;
+   }
+}
+
+button {
+  border-radius: 4px !important;
+
+  a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+}

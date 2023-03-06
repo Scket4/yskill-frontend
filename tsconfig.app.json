@@ -1,0 +1,45 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/**/*.mdx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "isolatedModules": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "types": ["node", "vitest/globals", "vite/client", "mdx"],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@src/*": [
+        "src/*"
+      ],
+      "@sb/*": [
+        ".storybook/*"
+      ],
+      "@components/*": [
+        "packages/components/src/*"
+      ],
+      "@icons/*": [
+        "packages/icons/src/*"
+      ],
+      "@illustrations/*": [
+        "packages/illustrations/src/*"
+      ],
+      "@store/*": [
+        "packages/store/src/*"
+      ]
+    }
+  }
+}
