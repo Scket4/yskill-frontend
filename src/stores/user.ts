@@ -27,5 +27,12 @@ export const useUserStore = defineStore('user', () => {
 
   const isAuth = computed(() => !!user.token);
 
-  return { user, isAuth };
+  const isEmailExist = (email: string): boolean => {
+    // Запрос на сервер. Если есть - получаем пользователя и возаращаем true иначе false. Если фолс - записываем в стор email
+    user.email = email;
+
+    return email === 'alexey@mail.com';
+  };
+
+  return { user, isAuth, isEmailExist };
 });

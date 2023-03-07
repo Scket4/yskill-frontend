@@ -1,15 +1,20 @@
 <script lang="ts">
-import { computed, defineComponent, toRefs } from 'vue';
+import { computed, defineComponent, toRefs, PropType } from 'vue';
 import LanguageSwitcher from '@/components/header/LanguagesSwitcher.vue';
 import { useTextStore } from '@/stores/text/text';
 import { useUserStore } from '@/stores/user';
+
+interface IMenuItem {
+  title: string;
+  path: string;
+}
 
 export default defineComponent({
   name: 'HeaderComponent',
   components: { LanguageSwitcher },
   props: {
     menuItems: {
-      type: Array,
+      type: Array as PropType<IMenuItem[]>,
       default: () => [],
       required: true
     }
@@ -21,7 +26,6 @@ export default defineComponent({
     const usernameText = computed(() => (isAuth.value ? user.value.firstName : text.value.home.menu.auth));
     const usernameLink = computed(() => (isAuth.value ? '/profile' : '/auth'));
 
-    console.log(usernameLink.value);
     return {
       usernameText,
       usernameLink: usernameLink.value
